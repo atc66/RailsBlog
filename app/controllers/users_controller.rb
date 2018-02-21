@@ -5,14 +5,17 @@ class UsersController < ApplicationController
 	end
 
 	def new
-		
+		@user = User.new
 	end
 
 	def create
-		
-		if 
+		user = User.new(user_params)
+		if user.save
+			flash[:message]="User Created"
+			redirect_to '/users'
 		else
-			
+			redirect_to users_new_path
+			flash[:message]="Try Again"
 		end
 	end
 
@@ -25,11 +28,7 @@ class UsersController < ApplicationController
 	end
 
 	def update
-		
-		if 
-		else
 	
-		end
 	end
 
 	def destroy
