@@ -5,4 +5,10 @@ class ApplicationController < ActionController::Base
   		current_user = User.find_by_id(session[:user_id])
 	end
 
+	helper_method :current_user, :logged_in?
+	
+	def logged_in
+		current_user != nil
+	end
+
 end
