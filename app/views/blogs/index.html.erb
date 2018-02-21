@@ -1,0 +1,7 @@
+<h1>List of Blogs</h1>
+
+<% @blogs.each do |b|  %>
+	<div><%= b.title %></div>
+	<div><%= b.category %></div>
+	<div><%= b.content %></div>
+<% end %>
