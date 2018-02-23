@@ -20,22 +20,39 @@ class UsersController < ApplicationController
 	end
 
 	def show
-	
+		@user = User.find(params[:id])
 	end
 
 	def edit
-		
+		@user = User.find(params[:id])
 	end
 
 	def update
-	
+		@user = User.find(params[:id])
+		if user.update(user_params)
+			flash[:message] = 'Your user information was edited successfully'
+			redirect_to "/users/#{user.id}"
+		else
+			flash[:message] = 'Try again'
+			render "/userss/#{user.id}/edit"
+		end
 	end
 
 	def destroy
-		
+		@user = User.find(params[:id])
+		@user.destroy
+		redirect_to root_path
 	end
 
 	private
+	def comment_params
+		params.require(:comment).permit(:message, :user_id, :blog_id)
+	end
+	
+	def blog_params
+		params.require(:blog).permit(:title, :category, :content, :user_id)
+	end
+
 	def user_params
 		params.require(:user).permit(:username, :email, :password)
 	end

@@ -47,6 +47,10 @@ class BlogsController < ApplicationController
 	end
 
 	private
+	def comment_params
+		params.require(:comment).permit(:message, :user_id, :blog_id)
+	end
+	
 	def blog_params
 		params.require(:blog).permit(:title, :category, :content, :user_id)
 	end

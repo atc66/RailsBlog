@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 	post 'users', to: "users#create"
 	get 'users/show'
 		
-	root to: "blogs#index"
+	root to: "sessions#new"
 	
 	resources :blogs do
 		resources :comments
