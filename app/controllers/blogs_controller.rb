@@ -5,12 +5,14 @@ class BlogsController < ApplicationController
 	end
 
 	def new
+		@user = User.find(current_user.id)
 		@blog = Blog.new
 	end
 
 	def create
-		blog = Blog.new(blog_params)
-		if blog.save
+		@user = User.find(current_user.id)
+		@blog = Blog.new(blog_params)
+		if @blog.save
 			flash[:message] = 'Your blog was created successfully'
 			redirect_to '/blogs'
 		else
@@ -45,8 +47,12 @@ class BlogsController < ApplicationController
 	end
 
 	private
-		def blog_params
-		params.require(:blog).permit(:title, :category, :content)
+	def blog_params
+		params.require(:blog).permit(:title, :category, :content, :user_id)
+	end
+
+	def user_params
+		params.require(:user).permit(:id)
 	end
 
 end

@@ -15,6 +15,7 @@
       <li><a href='/blogs/new'>Write a New Blog</a></li>
       <li><a href='/users'>Users</a></li>
       <li><a href='/users/new'>Create a New User</a></li>
+      <li><%= link_to 'logout', '/logout', {method: 'post'} %></li>
     </nav>
 
   	 <%= flash[:message] if flash[:message] %>
