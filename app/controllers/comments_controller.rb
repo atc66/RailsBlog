@@ -1,46 +1,30 @@
 class CommentsController < ApplicationController
 
 	def index
-		@comments = Comment.all
+		
 	end
 
 	def new
-		@user = User.find(current_user.id)
-		@blog = Blog.find(current_blog.id)
+		@blog = Blog.find(params[:blog_id])
 		@comment = Comment.new
 	end
 
 
 	def create
 		@user = User.find(current_user.id)
-		@blog = Blog.find(current_blog.id)
-		@comment = Comment.new(comment_params)
+		@blog = Blog.find(params[:id])
+		comment = Comment.new(comment_params)
 		if @comment.save
 			flash[:message] = 'Your comment was posted'
-			redirect_to "/blogs/#{@blog.id}/comments/#{@comment.id}"
+			redirect_to "/blogs/#{@blog.id}/comments/"
 		else
 			flash[:message] = 'try again'
-			render '/blogs/#{@blog.id}/comments/'
+			render '/blogs/#{@blog.id}/comments/new'
 		end
 	end
 
 	def show
-		@comment = Comment.find_by_id(params[:id])
-	end
-
-	def edit
 		@comment = Comment.find(params[:id])
-	end
-
-	def update
-		@comment = Comment.find(params[:id])
-		if comment.update(comment_params)
-			flash[:message] = 'Your comment was edited successfully'
-			redirect_to "/blogs/#{@blog.id}/comments/"
-		else
-			flash[:message] = 'Try again'
-			render "/blogs/#{blog.id}/edit"
-		end
 	end
 
 	def destroy
@@ -62,4 +46,5 @@ private
 	def user_params
 		params.require(:user).permit(:id)
 	end
+
 end

@@ -4,5 +4,8 @@
 <%= @blog.category %> 
 <%= @blog.content %> 
 
+<h1>Make a comment:</h1>
+<%= link_to "Comment", "/blogs/#{@blog.id}/comments", method: :get %>
+
 <h1>Delete your Blog:</h1>
 <%= link_to "Delete", blog_path, method: :delete %>
