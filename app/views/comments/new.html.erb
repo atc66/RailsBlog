@@ -1,1 +1,8 @@
 <h1>Create a new comment</h1>
+<% form_for @comment do |f| %>
+	<%= f.hidden_field :user_id, :value => @user.id %>
+	<%= f.hidden_field :blog_id, :value => @blog.id %>
+	<%= f.text_field :message %>
+	<%= f.submit %>
+<% end %>
+
