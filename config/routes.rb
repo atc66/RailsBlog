@@ -15,7 +15,12 @@ Rails.application.routes.draw do
 	post '/login', to: 'sessions#create'
 	post'/logout', to: 'sessions#destroy'
 
+
+	
+=begin
 	get '/blogs/:blog_id/comments/new', to: "comments#new"
+
 	post '/blogs/:blog_id/comments/new', to: "comments#create"
 	
+=end
 end

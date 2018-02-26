@@ -23,6 +23,7 @@ class BlogsController < ApplicationController
 
 	def show
 		@blog = Blog.find(params[:id])
+		@comments = Comment.all
 	end
 
 	def edit
@@ -43,7 +44,7 @@ class BlogsController < ApplicationController
 	def destroy
 		@blog = Blog.find(params[:id])
 		@blog.destroy
-		redirect_to root_path
+		redirect_to "/blogs"
 	end
 
 	private

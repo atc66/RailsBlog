@@ -1,11 +1,17 @@
 <h1>This is the blog</h1>
 
-<%= @blog.title %> 
-<%= @blog.category %> 
-<%= @blog.content %> 
+<div> Title: <%= @blog.title %></div>
+<div> Category: <%= @blog.category %></div> 
+<div> Content: <%= @blog.content %></div> 
+
+<h2>Comments:</h2>
+<% @comments.each do |c|  %>
+	<div><%= c.message %></div>
+<% end %>
+
 
 <h1>Make a comment:</h1>
-<%= link_to "Comment", "/blogs/#{@blog.id}/comments", method: :get %>
+<%= link_to "Comment", "/blogs/#{@blog.id}/comments/new", method: :get %>
 
 <h1>Delete your Blog:</h1>
 <%= link_to "Delete", blog_path, method: :delete %>

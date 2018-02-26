@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
 
-	def index
-		@comments = Comment.all
-	end
+	# def index
+	# 	@comments = Comment.all
+	# end
 
 	def new
 		@user = User.find(current_user.id)
@@ -12,12 +12,12 @@ class CommentsController < ApplicationController
 
 
 	def create
-		@user = User.find(current_user.id)
-		@blog = Blog.find(params[:id])
-		@comment = Comment.new(comment_params)
-		if @comment.save
+		# @user = User.find(current_user.id)
+		@blog = Blog.find(params[:blog_id])
+		comment = @blog.comments.build(comment_params)
+		if comment.save
 			flash[:message] = 'Your comment was posted'
-			redirect_to "/blogs/#{@blog.id}/comments/"
+			redirect_to "/blogs/#{@blog.id}"
 		else
 			flash[:message] = 'try again'
 			render '/blogs/#{@blog.id}/comments/new'
