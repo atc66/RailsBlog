@@ -1,0 +1,16 @@
+<h1>User show page</h1>
+
+<div> Username: <%= @user.username %></div>
+<div> Email: <%= @user.email %></div> 
+
+<%if logged_in? &&  @user.id == current_user.id %>
+	<h1>Edit user Information:</h1>
+	<%= link_to "Edit", "/users/#{@user.id}/edit", method: :get %>
+
+
+	<h1>Delete your Account:</h1>
+	<%= link_to "Delete", user_path, method: :delete %>
+<% end %>
+
+<%= @user.id %>
+<%=  current_user.id %>

@@ -1,5 +1,5 @@
 <h1>List of Blogs</h1>
 
 <% @blogs.each do |b|  %>
-	<div><%= b.title %></div>
+	<div><a href='/blogs/<%= b.id %>'><%= b.title %></a></div>
 <% end %>
