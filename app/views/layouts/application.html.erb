@@ -9,22 +9,29 @@
   </head>
 
   <body>
-  	  <nav class='navbar'>
-            <li><a href='/blogs'>Blogs</a></li>
-            <li><a href='/users'>Users</a></li>
-          <% if logged_in? %>
-            <li><a href='/blogs/new'>Write a New Blog</a></li>
-            <li><a href="/users/<%= current_user.id %>">Profile</a></li>
-            <li><%= link_to 'Log out', '/logout', {method: 'post'} %></li>
-          <% end %>
+  	<nav class='navbar'>
+      <li><a href='/blogs'>Blogs</a></li>
+      <li><a href='/users'>Users</a></li>
+        <% if logged_in? %>
+          <li><a href='/blogs/new'>Write a New Blog</a></li>
+          <li><a href="/users/<%= current_user.id %>">Profile</a></li>
+          <li><%= link_to 'Log out', '/logout', {method: 'post'} %></li>
+        <% end %>
 
+<<<<<<< HEAD
+        <% if !logged_in? %>
+          <li><a href='/login'>Login</a></li> 
+          <li><a href='/users/new'>Create a New User</a></li>
+        <% end %>
+=======
           <% if !logged_in? %>
             <li><a href='/login'>Login</a></li> 
             <li><a href='/users/new'>Create a New User</a></li>
           <% end %>
+>>>>>>> master
     </nav>
 
-  	 <%= flash[:message] if flash[:message] %>
+    <%= flash[:message] if flash[:message] %>
     <%= yield %>
   </body>
 </html>

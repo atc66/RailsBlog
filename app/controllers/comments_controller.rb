@@ -1,8 +1,8 @@
 class CommentsController < ApplicationController
 
-	def index
-		@comments = Comment.all
-	end
+	# def index
+	# 	@comments = Comment.all
+	# end
 
 	def new
 		@user = User.find(current_user.id)
@@ -23,9 +23,9 @@ class CommentsController < ApplicationController
 		end
 	end	
 
-	def show
-		@comment = Comment.find(params[:id])
-	end
+	# def show
+	# 	@comment = Comment.find(params[:id])
+	# end
 
 	def destroy
 		@blog = Blog.find(params[:id])
