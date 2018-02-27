@@ -23,7 +23,7 @@ class BlogsController < ApplicationController
 
 	def show
 		@blog = Blog.find(params[:id])
-		@comments = Comment.all
+		@comments = @blog.comments.all
 	end
 
 	def edit
@@ -32,12 +32,12 @@ class BlogsController < ApplicationController
 
 	def update
 		@blog = Blog.find(params[:id])
-		if blog.update(blog_params)
+		if @blog.update(blog_params)
 			flash[:message] = 'Your blog was edited successfully'
-			redirect_to "/blogs/#{blog.id}"
+			redirect_to "/blogs/#{@blog.id}"
 		else
 			flash[:message] = 'Try again'
-			render "/blogs/#{blog.id}/edit"
+			render "/blogs/#{@blog.id}/edit"
 		end
 	end
 

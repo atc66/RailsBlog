@@ -29,12 +29,12 @@ class UsersController < ApplicationController
 
 	def update
 		@user = User.find(params[:id])
-		if user.update(user_params)
+		if @user.update(user_params)
 			flash[:message] = 'Your user information was edited successfully'
-			redirect_to "/users/#{user.id}"
+			redirect_to "/users/#{@user.id}"
 		else
 			flash[:message] = 'Try again'
-			render "/userss/#{user.id}/edit"
+			render "/users/#{@user.id}/edit"
 		end
 	end
 
@@ -54,7 +54,7 @@ class UsersController < ApplicationController
 	end
 
 	def user_params
-		params.require(:user).permit(:username, :email, :password)
+		params.require(:user).permit(:username, :email, :password, :user_id)
 	end
 
 end

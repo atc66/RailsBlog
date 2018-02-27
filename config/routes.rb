@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-	get '/users', to: "users#index"
-	get 'users/new'
-	post 'users', to: "users#create"
-	get 'users/show'
+	resources :users
+	# get '/users', to: "users#index"
+	# get 'users/new'
+	# post 'users', to: "users#create"
+	# get 'users/show'
 		
 	root to: "sessions#new"
 	
