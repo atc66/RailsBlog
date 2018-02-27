@@ -18,10 +18,17 @@
           <li><%= link_to 'Log out', '/logout', {method: 'post'} %></li>
         <% end %>
 
+<<<<<<< HEAD
         <% if !logged_in? %>
           <li><a href='/login'>Login</a></li> 
           <li><a href='/users/new'>Create a New User</a></li>
         <% end %>
+=======
+          <% if !logged_in? %>
+            <li><a href='/login'>Login</a></li> 
+            <li><a href='/users/new'>Create a New User</a></li>
+          <% end %>
+>>>>>>> master
     </nav>
 
     <%= flash[:message] if flash[:message] %>
