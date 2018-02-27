@@ -9,17 +9,12 @@
   </head>
 
   <body>
-
-    <h1>Test</h1>
-    <h1>testing</h1>
-    <h1>whatever</h1>
-    <h1>jeremy</h1>
   	  <nav class='navbar'>
-      <li><a href='/'>Home</a></li> 
-      <li><a href='/blogs'>Blogs</a></li>
-      <li><a href='/blogs/new'>Write a New Blog</a></li>
-      <li><a href='/users'>Users</a></li>
-      <li><a href='/users/new'>Create a New User</a></li>
+      <li class='navbar-item'><a href='/'>Home</a></li> 
+      <li class='navbar-item'><a href='/blogs'>Blogs</a></li>
+      <li class='navbar-item'><a href='/blogs/new'>Write a New Blog</a></li>
+      <li class='navbar-item'><a href='/users'>Users</a></li>
+      <li class='navbar-item'><a href='/users/new'>Create a New User</a></li>
       <li><%= link_to 'logout', '/logout', {method: 'post'} %></li>
     </nav>
 

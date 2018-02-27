@@ -6,7 +6,10 @@ Rails.application.routes.draw do
 	get 'users/show'
 		
 	root to: "blogs#index"
-	resources :blogs
+	
+	resources :blogs do
+		resources :comments
+	end
 
 	get '/login', to: 'sessions#new'
 	post '/login', to: 'sessions#create'
