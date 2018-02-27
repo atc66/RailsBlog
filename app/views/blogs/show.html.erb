@@ -5,15 +5,18 @@
 <div> Content: <%= @blog.content %></div> 
 
 <h2>Comments:</h2>
+
 <% @comments.each do |c|  %>
 	<div><%= c.message %></div>
 <% end %>
 
-<h1>Edit Blog:</h1>
-<%= link_to "Edit", "/blogs/#{@blog.id}/edit", method: :get %>
+<% if logged_in? %>
+	<h1>Edit Blog:</h1>
+	<%= link_to "Edit", "/blogs/#{@blog.id}/edit", method: :get %>
 
-<h1>Make a comment:</h1>
-<%= link_to "Comment", "/blogs/#{@blog.id}/comments/new", method: :get %>
+	<h1>Make a comment:</h1>
+	<%= link_to "Comment", "/blogs/#{@blog.id}/comments/new", method: :get %>
 
-<h1>Delete your Blog:</h1>
-<%= link_to "Delete", blog_path, method: :delete %>
+	<h1>Delete your Blog:</h1>
+	<%= link_to "Delete", blog_path, method: :delete %>
+<% end %>
