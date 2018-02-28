@@ -31,7 +31,6 @@ class BlogsController < ApplicationController
 		if current_user.id == @blog.user_id
 
 		else
-			# change where it redirects to
 			redirect_to blog_path
 		end
 	end

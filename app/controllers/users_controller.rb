@@ -28,7 +28,6 @@ class UsersController < ApplicationController
 		if current_user.id == @user.id
 
 		else
-			# change where it redirects to
 			redirect_to user_path
 		end
 	end
