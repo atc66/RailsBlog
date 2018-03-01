@@ -1,9 +1,12 @@
-<h1>Create a new user</h1>
+<%= image_tag "woods.JPG", :class => "style-image" %>
 
-<%= form_for @user do |f| %>
-	Username: <%= f.text_field :username %> <br>
-	Email: <%= f.text_field :email %><br>
-	Password: <%= f.text_field :password %>
-	<%= f.submit %>
-<% end %>
+<div class='form-box'>
+<p class="header">Sign Up</p>
+	<%= form_for @user do |f| %>
+		<%= f.text_field :username, placeholder: 'Username', :class => "entry" %> <br>
+		<%= f.text_field :email, placeholder: 'Email', :class => "entry" %><br>
+		<%= f.password_field :password, placeholder: 'Password', :class => "entry" %>
+		<%= f.submit 'Create User', :class => 'button' %>
+	<% end %>
+</div>
 

@@ -13,7 +13,7 @@
 }
 
 .navlist {
-	background: blue;
+	background: rgba(211,211,211, 0.5);
  	display: block;
   	float: left;
  	margin: 0;
@@ -23,14 +23,14 @@
 
 	a {
 		font-family: "Helvetica", Arial, sans-serif;
-		color: white; // black font
+		color: white;
 	    display: block;
 	    padding-top: 20px;
 		padding-bottom: 20px;
 		text-decoration: none;
 	  	
 	  	&:hover {
-	      color: #e82d00; //red font
+	      color: grey;
 	    }
 	}
 }
