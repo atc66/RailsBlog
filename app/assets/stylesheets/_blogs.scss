@@ -1,0 +1,19 @@
+.blog-box {
+	margin-left: 25%;
+	margin-right: 25%;
+	background: rgba(211,211,211, 0.5);
+	margin-top: 5px;
+	text-align: center;
+}
+
+a {
+	font-family: "Helvetica", Arial, sans-serif;
+	color: white;
+    display: block;
+    padding-top: 20px;
+	padding-bottom: 20px;
+	text-decoration: none;  	
+	&:hover {
+	  color: grey;
+	}
+}

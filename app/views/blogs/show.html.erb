@@ -1,26 +1,27 @@
 <%= image_tag "boardwalk.jpg", :class => "style-image" %>
 
 <p>This is the blog</p>
-
-<div> Title: <%= @blog.title %></div>
-<div> Category: <%= @blog.category %></div> 
-<div> Content: <%= @blog.content %></div> 
+<div class="blog-box">
+	<div> <p>Title:</p><p><%= @blog.title %></p></div>
+	<div> <p>Category:</p><p><%= @blog.category %></p></div> 
+	<div> <p>Content:</p><p><%= @blog.content %></p></div> 
+</div>
 
 <p>Comments:</p>
-
-	<% @comments.each do |c|  %>
-		<div><%= c.message %></div>
-	<% end %>
+		<% @comments.each do |c|  %>
+			<div class="blog-box"><p><%= c.message %></p></div>
+		<% end %>
 
 	<% if logged_in? %>
-		<p>Make a comment:</p>
-		<%= link_to "Comment", "/blogs/#{@blog.id}/comments/new", method: :get %>
+		<div class="blog-box">
+			<%= link_to "Comment", "/blogs/#{@blog.id}/comments/new", method: :get %>
+		</div>
 	<% end %>
+		
 
 	<%if logged_in? &&  @blog.user_id == current_user.id %>
-		<p>Edit Blog:</p>
-		<%= link_to "Edit", "/blogs/#{@blog.id}/edit", method: :get %>
-
-		<p>Delete your Blog:</p>
-		<%= link_to "Delete", blog_path, method: :delete %>
+		<div class="blog-box">
+			<%= link_to "Edit", "/blogs/#{@blog.id}/edit", method: :get %>
+			<%= link_to "Delete", blog_path, method: :delete %>
+		</div>
 	<% end %>
