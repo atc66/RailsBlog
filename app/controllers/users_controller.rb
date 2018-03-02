@@ -51,11 +51,11 @@ class UsersController < ApplicationController
 
 	private
 	def comment_params
-		params.require(:comment).permit(:message, :user_id, :blog_id)
+		params.require(:comment).permit(:message, :user_id, :blog_id, :username)
 	end
 	
 	def blog_params
-		params.require(:blog).permit(:title, :category, :content, :user_id)
+		params.require(:blog).permit(:title, :category, :content, :user_id, :username)
 	end
 
 	def user_params

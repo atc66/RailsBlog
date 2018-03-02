@@ -2,14 +2,22 @@
 
 <p>This is the blog</p>
 <div class="blog-box">
+	<%= @blog.username %>
 	<div> <p>Title:</p><p><%= @blog.title %></p></div>
 	<div> <p>Category:</p><p><%= @blog.category %></p></div> 
 	<div> <p>Content:</p><p><%= @blog.content %></p></div> 
 </div>
 
+
+<%= @user.username %>
+
+
 <p>Comments:</p>
 		<% @comments.each do |c|  %>
-			<div class="blog-box"><p><%= c.message %></p></div>
+			<div class="blog-box">
+				<p><%= c.username %></p>
+				<p><%= c.message %></p>
+			</div>
 		<% end %>
 
 	<% if logged_in? %>
