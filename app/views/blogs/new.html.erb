@@ -1,11 +1,13 @@
 <%= image_tag "boardwalk.jpg", :class => "style-image" %>
-<p>Create a new blog</p>
 
-<%= form_for @blog do |f| %>
-	<div><%= f.hidden_field :username, :value => @user.username %></div>
-	<div><%= f.hidden_field :user_id, :value => @user.id %></div>
-	<div>Title:<%= f.text_field :title %></div>
-	<div>Category:<%= f.text_field :category %></div>
-	<div>Content:<%= f.text_area :content %></div>
-	<div><%= f.submit %></div>
-<% end %>
+<div class='form-box'>
+	<p>Create a new blog</p>
+	<%= form_for @blog do |f| %>
+		<div><%= f.hidden_field :username, :value => @user.username %></div>
+		<div><%= f.hidden_field :user_id, :value => @user.id %></div>
+		<div><%= f.text_field :title, placeholder: 'title' %></div>
+		<div><%= f.text_field :category, placeholder: 'category' %></div>
+		<div><%= f.text_area :content, placeholder: 'content' %></div>
+		<div><%= f.submit 'Publish Blog', :class => 'button' %></div>
+	<% end %>
+</div>

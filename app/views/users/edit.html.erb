@@ -1,10 +1,10 @@
 <%= image_tag "woods.JPG", :class => "style-image" %>
-
-<p>Edit User</p>
-
-<%= form_for @user do |f| %>
-	<div>Username:<%= f.text_field :username %></div>
-	<div>Email:<%= f.text_field :email %></div>
-	<div>Password:<%= f.text_field :password %></div>
-	<div><%= f.submit %></div>
-<% end %>
+<div class='form-box'>
+	<p>Edit User</p>
+	<%= form_for @user do |f| %>
+		<div><%= f.text_field :username, placeholder: 'Username', :class => "entry" %></div>
+		<div><%= f.text_field :email, placeholder: 'Email', :class => "entry" %></div>
+		<div><%= f.text_field :password, placeholder: 'New Password', :class => "entry" %></div>
+		<div><%= f.submit 'Update Profile', :class => 'button'%></div>
+	<% end %>
+</div>

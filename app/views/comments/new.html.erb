@@ -1,16 +1,12 @@
 <%= image_tag "sunrise.jpg", :class => "style-image" %>
 
-<p>Create a new comment</p>
-
-<%= @user.username %>
-
-<%= form_for @comment, url:(blog_comments_path) do |f| %>
-	<%= f.hidden_field :username, :value => @user.username %>
-	<%= f.hidden_field :user_id, :value => @user.id %>
-	<%= f.hidden_field :blog_id, :value => @blog.id %>
-	<%= f.text_field :message %>
-	<%= f.submit %>
-<% end %>
-
-<%= @user.username %>
-<%= @user.id %>
+<div class='form-box'>
+	<p>Create a new comment</p>
+	<%= form_for @comment, url:(blog_comments_path) do |f| %>
+		<%= f.hidden_field :username, :value => @user.username %>
+		<%= f.hidden_field :user_id, :value => @user.id %>
+		<%= f.hidden_field :blog_id, :value => @blog.id %>
+		<%= f.text_field :message %>
+		<%= f.submit 'Comment', :class => 'button' %>
+	<% end %>
+</div>
