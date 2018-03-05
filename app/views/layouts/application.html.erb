@@ -11,8 +11,8 @@
   <body>
   	<nav class='navbar with-indicator'>
         <% if logged_in? %>
-          <li class = 'navlist'><a href='/blogs'>Blogs</a></li>
           <li class = 'navlist'><a href="/users/<%= current_user.id %>">Profile</a></li>
+          <li class = 'navlist'><a href='/blogs'>Blogs</a></li>
           <li class = 'navlist'><a href='/blogs/new'>Write a New Blog</a></li>
           <li class = 'navlist'><%= link_to 'Log out', '/logout', {method: 'post'} %></li>
         <% end %>

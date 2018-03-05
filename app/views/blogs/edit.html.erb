@@ -1,9 +1,12 @@
 <%= image_tag "boardwalk.jpg", :class => "style-image" %>
+
 <p>Edit new blog</p>
 
-<%= form_for @blog do |f| %>
-	<div><%= f.text_field :title %></div>
-	<div><%= f.text_field :category %></div>
-	<div><%= f.text_area :content %></div>
-	<div><%= f.submit %></div>
-<% end %>
+<div class='form-box'>
+	<%= form_for @blog do |f| %>
+		<div><%= f.text_field :title %></div>
+		<div><%= f.text_field :category %></div>
+		<div><%= f.text_area :content %></div>
+		<div><%= f.submit %></div>
+	<% end %>
+</div>
