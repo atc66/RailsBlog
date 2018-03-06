@@ -22,9 +22,12 @@ class BlogsController < ApplicationController
 	end
 
 	def show
-		# @user = User.find(current_user.id)
+		@user = User.find(current_user.id)
 		@blog = Blog.find(params[:id])
 		@comments = @blog.comments.all
+		# Added below
+		@comment = Comment.new
+
 	end
 
 	def edit
