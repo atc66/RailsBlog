@@ -1,9 +1,7 @@
-<h1>Create a new user</h1>
+<%= image_tag "woods.JPG", :class => "style-image" %>
 
-<%= form_for @user do |f| %>
-	Username: <%= f.text_field :username %> <br>
-	Email: <%= f.text_field :email %><br>
-	Password: <%= f.text_field :password %>
-	<%= f.submit %>
-<% end %>
+<p class="header">Sign Up</p>
+
+<%= render "userform" %>
+
 

@@ -1,0 +1,35 @@
+#commform {
+	width: 50%;
+	display: none;
+}
+
+#makecomment {
+	background: rgba(211,211,211, 0.5);
+	margin: 10px auto;
+	width: 20%;
+	height: 10%px;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+
+.comment-box {
+	font-family: "Helvetica", Arial, sans-serif;
+	margin: 10px auto 10px;
+	background: rgba(211,211,211, 0.5);
+	margin-right: 5px;
+}
+
+.commenter {
+	color: black;
+}
+
+.showtitle{
+	color: black;
+}
+.cat{
+	color: blue;
+}
+.cont{
+	color: black;
+}

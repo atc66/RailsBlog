@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
 	def create
 		@user = User.find_by_email(params[:email])
 		if @user && @user.authenticate(params[:password])
+			session[:username] = @user.username
 			session[:user_id] = @user.id
 			flash[:message] = "you Logged in"
 			redirect_to "/users/#{@user.id}"

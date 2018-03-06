@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 	end
 
 	def create
-		# @user = User.find(current_user.id)
+		@user = User.find(current_user.id)
 		@blog = Blog.find(params[:blog_id])
 		comment = @blog.comments.build(comment_params)
 		if comment.save!
@@ -34,13 +34,13 @@ class CommentsController < ApplicationController
 	end
 
 
-private
+	private
 	def comment_params
-		params.require(:comment).permit(:message, :user_id, :blog_id)
+		params.require(:comment).permit(:message, :user_id, :blog_id, :username)
 	end
 	
 	def blog_params
-		params.require(:blog).permit(:title, :category, :content, :user_id)
+		params.require(:blog).permit(:title, :category, :content, :user_id, :username)
 	end
 
 	def user_params

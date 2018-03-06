@@ -5,31 +5,26 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   </head>
 
   <body>
-  	<nav class='navbar'>
-      <li><a href='/blogs'>Blogs</a></li>
-      <li><a href='/users'>Users</a></li>
+  	<nav class='navbar with-indicator'>
         <% if logged_in? %>
-          <li><a href='/blogs/new'>Write a New Blog</a></li>
-          <li><a href="/users/<%= current_user.id %>">Profile</a></li>
-          <li><%= link_to 'Log out', '/logout', {method: 'post'} %></li>
+          <li class = 'navlist'><a href="/users/<%= current_user.id %>">Profile</a></li>
+          <li class = 'navlist'><a href='/blogs'>Blogs</a></li>
+          <li class = 'navlist'><a href='/blogs/new'>Write a New Blog</a></li>
+          <li class = 'navlist'><%= link_to 'Log out', '/logout', {method: 'post'} %></li>
         <% end %>
 
-<<<<<<< HEAD
         <% if !logged_in? %>
-          <li><a href='/login'>Login</a></li> 
-          <li><a href='/users/new'>Create a New User</a></li>
+          <li class = 'navlist'><a href='/login'>Login</a></li>
+          <li class = 'navlist'><a href='/blogs'>Blogs</a></li>
+          <li class = 'navlist'><a href='/users'>Users</a></li>
+          <li class = 'navlist'><a href='/users/new'>Create a New User</a></li>
         <% end %>
-=======
-          <% if !logged_in? %>
-            <li><a href='/login'>Login</a></li> 
-            <li><a href='/users/new'>Create a New User</a></li>
-          <% end %>
->>>>>>> master
     </nav>
+    <br>
 
     <%= flash[:message] if flash[:message] %>
     <%= yield %>

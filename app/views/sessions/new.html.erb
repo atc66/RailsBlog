@@ -1,7 +1,15 @@
-<h2>Log in Page</h2>
 
-<%= form_tag (login_path) do %>
-<%= text_field_tag :email %>
-<%= text_field_tag :password %>
-<%= submit_tag "login" %>
-<% end %>
+<%= video_tag "run.mp4", :autoplay => true, :loop => true, :class => "myVideo" %>
+
+<div class='form-box'>
+	<p class="header">Login</p>
+		<%= form_tag (login_path) do %>
+			<%= email_field_tag :email, nil, placeholder: 'Email', :class => "entry" %>
+			<%= password_field_tag :password, nil, placeholder: "Password", :class => "entry" %>
+			<%= submit_tag "login", :class => "button" %>
+		<% end %>
+</div>
+
+<div class="title">
+	<p>The Runner's Blog</p>
+</div>

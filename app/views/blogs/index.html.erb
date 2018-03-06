@@ -1,5 +1,7 @@
-<h1>List of Blogs</h1>
+<%= image_tag "boardwalk.jpg", :class => "style-image" %>
+
+<p>List of Blogs</p>
 
 <% @blogs.each do |b|  %>
-	<div><a href='/blogs/<%= b.id %>'><%= b.title %></a></div>
+	<div class="blog-box"><a href='/blogs/<%= b.id %>'><%= b.title %></a></div>
 <% end %>

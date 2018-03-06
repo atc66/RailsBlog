@@ -1,9 +1,4 @@
-<h1>Create a new blog</h1>
+<%= image_tag "boardwalk.jpg", :class => "style-image" %>
+<p>Create a new blog</p>
+<%= render "blogform" %>
 
-<%= form_for @blog do |f| %>
-	<div><%= f.hidden_field :user_id, :value => @user.id %></div>
-	<div>Title:<%= f.text_field :title %></div>
-	<div>Category:<%= f.text_field :category %></div>
-	<div>Content:<%= f.text_area :content %></div>
-	<div><%= f.submit %></div>
-<% end %>

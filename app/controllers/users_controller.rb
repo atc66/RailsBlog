@@ -25,6 +25,11 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = User.find(params[:id])
+		if current_user.id == @user.id
+
+		else
+			redirect_to user_path
+		end
 	end
 
 	def update
@@ -46,11 +51,11 @@ class UsersController < ApplicationController
 
 	private
 	def comment_params
-		params.require(:comment).permit(:message, :user_id, :blog_id)
+		params.require(:comment).permit(:message, :user_id, :blog_id, :username)
 	end
 	
 	def blog_params
-		params.require(:blog).permit(:title, :category, :content, :user_id)
+		params.require(:blog).permit(:title, :category, :content, :user_id, :username)
 	end
 
 	def user_params

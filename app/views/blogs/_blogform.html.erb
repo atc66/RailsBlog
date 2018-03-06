@@ -1,0 +1,11 @@
+<div class='form-box'>
+	
+	<%= form_for @blog do |f| %>
+		<div><%= f.hidden_field :username, :value => @user.username %></div>
+		<div><%= f.hidden_field :user_id, :value => @user.id %></div>
+		<div><%= f.text_field :title, placeholder: 'title' %></div>
+		<div><%= f.text_field :category, placeholder: 'category' %></div>
+		<div><%= f.text_area :content, placeholder: 'content' %></div>
+		<div><%= f.submit 'Submit', :class => 'button' %></div>
+	<% end %>
+</div>
